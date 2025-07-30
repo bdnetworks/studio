@@ -1,7 +1,10 @@
 
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone, ShoppingCart, LayoutDashboard, BarChart3 } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -62,6 +65,22 @@ export default function Home() {
       batch: 'Live Batch',
       image: 'https://skill-shikhun.netlify.app/images/courses/digital-marketing.png',
     },
+     {
+      title: '3D অ্যানিমেশন',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/3d-animation.png',
+    },
+     {
+      title: 'UI/UX ডিজাইন',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/ui-ux.png',
+    },
   ];
 
   return (
@@ -93,36 +112,52 @@ export default function Home() {
       {/* Courses Section */}
       <section className="py-16 md:py-24 bg-[#1e0a35]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {courses.map((course, index) => (
-              <Card key={index} className="bg-white/5 border-white/20 text-white overflow-hidden group">
-                <div className="relative">
-                  <Image src={course.image} alt={course.title} width={300} height={300} className="w-full h-auto" />
-                  <Badge className="absolute top-2 left-2 bg-red-600 text-white">{course.batch}</Badge>
-                </div>
-                <CardContent className="p-4 text-center">
-                  <h3 className="font-semibold text-lg">{course.title}</h3>
-                  <div className="mt-4">
-                    {course.originalPrice && (
-                      <span className="text-sm line-through text-white/70 mr-2">৳{course.originalPrice}</span>
-                    )}
-                    <span className="text-2xl font-bold text-amber-400">৳{course.price}</span>
-                  </div>
-                   {course.promo && (
-                    <div className="mt-2">
-                        <p className="text-xs">PROMO CODE</p>
-                        <p className="font-bold text-lg tracking-widest">{course.promo}</p>
-                    </div>
-                  )}
-                  {!course.promo && (
-                      <div className="mt-2">
-                          <p className="text-sm">ক্র্যাশ কোর্স</p>
+           <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {courses.map((course, index) => (
+                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
+                   <Card className="bg-white/5 border-white/20 text-white overflow-hidden group aspect-square flex flex-col">
+                      <div className="relative">
+                        <Image src={course.image} alt={course.title} width={300} height={300} className="w-full h-auto object-cover" />
+                        <Badge className="absolute top-2 left-2 bg-red-600 text-white">{course.batch}</Badge>
                       </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      <CardContent className="p-4 text-center flex-1 flex flex-col justify-between">
+                        <h3 className="font-semibold text-lg">{course.title}</h3>
+                        <div className="mt-2">
+                           {course.originalPrice && (
+                            <span className="text-sm line-through text-white/70 mr-2">৳{course.originalPrice}</span>
+                          )}
+                          <span className="text-2xl font-bold text-amber-400">৳{course.price}</span>
+                        </div>
+                         {course.promo && (
+                          <div className="mt-2">
+                              <p className="text-xs">PROMO CODE</p>
+                              <p className="font-bold text-lg tracking-widest">{course.promo}</p>
+                          </div>
+                        )}
+                        {!course.promo && (
+                            <div className="mt-2">
+                                <p className="text-sm">ক্র্যাশ কোর্স</p>
+                            </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
 
