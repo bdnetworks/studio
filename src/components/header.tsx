@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Logo from './logo';
+import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '/', label: 'হোম' },
@@ -44,6 +45,7 @@ export default function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost">লগইন</Button>
           <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>একাউন্ট খুলুন</Button>
+          <ThemeToggle />
         </div>
 
         <div className="md:hidden">
@@ -56,7 +58,10 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
-                <Logo />
+                <div className="flex justify-between items-center">
+                  <Logo />
+                  <ThemeToggle />
+                </div>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <Link
