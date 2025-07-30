@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, Mail, MessageSquare } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -43,8 +43,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost">লগইন</Button>
-          <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>একাউন্ট খুলুন</Button>
+          <Button asChild variant="ghost">
+            <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
+          </Button>
+          <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
+            <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
+          </Button>
           <ThemeToggle />
         </div>
 
@@ -77,8 +81,12 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-4 flex flex-col gap-2">
-                  <Button variant="outline">লগইন</Button>
-                  <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>একাউন্ট খুলুন</Button>
+                   <Button asChild variant="outline">
+                      <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
+                  </Button>
+                  <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
+                     <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
+                  </Button>
                 </div>
               </div>
             </SheetContent>
