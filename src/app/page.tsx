@@ -16,8 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-primary/10 py-20 md:py-32 bg-cover bg-center" style={{backgroundImage: "url('https://placehold.co/1920x1080.png')"}}>
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative bg-gradient-to-br from-primary via-primary/70 to-accent py-20 md:py-32">
         <div className="container mx-auto px-4 text-center relative">
           <div className="mx-auto max-w-3xl">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-6xl">

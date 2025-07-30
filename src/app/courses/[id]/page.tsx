@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CheckCircle, Clock, BarChart2, Star, Users } from "lucide-react";
 
@@ -84,7 +85,9 @@ export default function CoursePage({ params }: CoursePageProps) {
                                 <div className="mb-6 text-center">
                                     <p className="font-headline text-4xl font-bold">${course.price}</p>
                                 </div>
-                                <Button size="lg" className="w-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>এখনই ভর্তি হন</Button>
+                                <Button size="lg" className="w-full" asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
+                                    <Link href="https://wa.me/1234567890?text=I'm%20interested%20in%20the%20course:%20React%20-%20The%20Complete%20Guide" target="_blank">এখনই ভর্তি হন</Link>
+                                </Button>
                                 <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
                                     <li className="flex items-center gap-3">
                                         <Clock className="h-5 w-5" />
