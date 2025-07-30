@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone, ShoppingCart, LayoutDashboard } from 'lucide-react';
+import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone, ShoppingCart, LayoutDashboard, BarChart3 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function Home() {
     const graphicCategories = [
-    { name: 'ব্লগার থিম', icon: BarChart },
+    { name: 'ব্লগার থিম', icon: BarChart3 },
     { name: 'ই-কমার্স', icon: ShoppingCart },
     { name: 'নিউজ সাইট', icon: Newspaper },
     { name: 'রিয়্যাক্ট প্রজেক্ট', icon: Code },
@@ -24,17 +24,20 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#0A0A0A] py-16 md:py-20 overflow-hidden text-white">
+      <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mx-auto max-w-4xl">
-            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight md:text-6xl">
+             <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                লার্নিং প্ল্যাটফর্ম
+              </div>
+            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight text-white md:text-6xl">
               <span className="bg-gradient-to-br from-[#b34fb3] to-[#091f6e] bg-clip-text text-transparent">স্কিল শিখুন,</span> নিজেকে গড়ুন
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/80">
               আপনার ব্যবসার জন্য আকর্ষণীয় ওয়েবসাইট থিম এবং ডিজিটাল পণ্য কিনুন। আজই আপনার অনলাইন যাত্রা শুরু করুন।
             </p>
-             <div className="mx-auto mt-6 max-w-md">
+             <div className="mx-auto mt-8 max-w-md">
               <Card className="bg-white/10 border-white/20 text-white">
                   <CardContent className="p-4">
                       <p className="font-medium">কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য কল করুন</p>
@@ -46,12 +49,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%]">
+             <Image src="https://skill-shikhun.netlify.app/images/hero-graphics.png" alt="Hero Graphics" width={1152} height={384} className="w-full h-auto" />
+        </div>
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="py-12 md:py-16">
+      <section id="categories" className="py-16 md:py-24 pt-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+            <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              জনপ্রিয় ক্যাটাগরি
+            </h2>
+          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {graphicCategories.map((category) => (
               <Card
                 key={category.name}
