@@ -13,7 +13,7 @@ export const projectCategories: ProjectCategory[] = [
 export const allProjects: Project[] = [
   {
     id: 1,
-    title: 'মডার্ন ই-কমার্স থিম',
+    title: 'ই-কমার্স থিম',
     description: 'ব্লগারের জন্য একটি আকর্ষণীয় এবং দ্রুতগতির ই-কমার্স থিম। সহজেই কাস্টমাইজ করা যায়।',
     category: 'ব্লগার থিম',
     price: 25,
