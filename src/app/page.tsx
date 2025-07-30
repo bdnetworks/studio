@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone } from 'lucide-react';
+import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone, ShoppingCart, LayoutDashboard } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -13,46 +13,28 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 export default function Home() {
-  const graphicCategories = [
-    {
-      title: 'ফ্রিল্যান্সিং কমপ্লিট গাইডলাইন',
-      image: 'https://placehold.co/300x400.png',
-      hint: 'freelancing guide'
-    },
-    {
-      title: 'ওয়েব ডেভেলপমেন্ট',
-      image: 'https://placehold.co/300x400.png',
-      hint: 'web development'
-    },
-    {
-      title: 'ভিডিও এডিটিং',
-      image: 'https://placehold.co/300x400.png',
-      hint: 'video editing'
-    },
-    {
-      title: 'গ্রাফিক ডিজাইন',
-      image: 'https://placehold.co/300x400.png',
-      hint: 'graphic design'
-    },
-    {
-      title: 'ডিজিটাল মার্কেটিং',
-      image: 'https://placehold.co/300x400.png',
-      hint: 'digital marketing'
-    },
-  ]
+    const graphicCategories = [
+    { name: 'ব্লগার থিম', icon: BarChart },
+    { name: 'ই-কমার্স', icon: ShoppingCart },
+    { name: 'নিউজ সাইট', icon: Newspaper },
+    { name: 'রিয়্যাক্ট প্রজেক্ট', icon: Code },
+    { name: 'নেক্সট.জেএস', icon: LayoutDashboard },
+    { name: 'UI/UX ডিজাইন', icon: Palette },
+  ];
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#201A51] py-20 md:py-24 overflow-hidden text-white">
+      <section className="relative bg-[#0A0A0A] py-16 md:py-20 overflow-hidden text-white">
+        <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mx-auto max-w-4xl">
-            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-              স্কিল শিখুন এর হাত ধরে শিখুন ঘরে বসে আয় করার মাধ্যম!
+            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight md:text-6xl">
+              <span className="bg-gradient-to-br from-[#b34fb3] to-[#091f6e] bg-clip-text text-transparent">স্কিল শিখুন,</span> নিজেকে গড়ুন
             </h1>
-            <p className="mt-6 text-lg text-indigo-200">
-              সাশ্রয়ী মূল্যে ঘরে বসে লাইভ ক্লাস করুন ইন্সট্রাক্টর এর সাথে!
+            <p className="mt-6 text-lg text-primary-foreground/80">
+              আপনার ব্যবসার জন্য আকর্ষণীয় ওয়েবসাইট থিম এবং ডিজিটাল পণ্য কিনুন। আজই আপনার অনলাইন যাত্রা শুরু করুন।
             </p>
-            <div className="mx-auto mt-8 max-w-md">
+             <div className="mx-auto mt-6 max-w-md">
               <Card className="bg-white/10 border-white/20 text-white">
                   <CardContent className="p-4">
                       <p className="font-medium">কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য কল করুন</p>
@@ -67,26 +49,20 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="py-16 md:py-20 bg-[#201A51] -mt-16">
+      <section id="categories" className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {graphicCategories.map((category) => (
               <Card
-                key={category.title}
-                className="group relative cursor-pointer text-center overflow-hidden rounded-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                key={category.name}
+                className="group transform cursor-pointer text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
-                <Image 
-                  src={category.image}
-                  alt={category.title}
-                  width={300}
-                  height={400}
-                  data-ai-hint={category.hint}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-end p-4">
-                   <Badge className="absolute top-2 left-2 bg-red-600 text-white border-red-600">LIVE BATCH</Badge>
-                   <h3 className="font-semibold text-white text-lg">{category.title}</h3>
-                </div>
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <div className="mb-4 rounded-full bg-primary/10 p-4 transition-colors duration-300 group-hover:bg-primary">
+                    <category.icon className="h-8 w-8 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">{category.name}</h3>
+                </CardContent>
               </Card>
             ))}
           </div>
