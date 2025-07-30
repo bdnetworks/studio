@@ -46,7 +46,7 @@ export default function Header() {
           <Button asChild variant="ghost">
             <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
           </Button>
-          <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366]">
+          <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366!important] hover:text-white">
             <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
           </Button>
           <ThemeToggle />
@@ -84,7 +84,7 @@ export default function Header() {
                    <Button asChild variant="outline">
                       <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
                   </Button>
-                  <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366]">
+                  <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366!important] hover:text-white">
                      <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
                   </Button>
                 </div>
