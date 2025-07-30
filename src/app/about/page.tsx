@@ -7,10 +7,10 @@ export default function AboutPage() {
       <section className="bg-primary/10 py-20 md:py-32">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-            স্কিল নেভিগেটর সম্পর্কে
+            আমরা কারা
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            আমরা সকলের জন্য, সর্বত্র মানসম্মত শিক্ষা সহজলভ্য করার মিশনে কাজ করছি। আমাদের সাথে শিখুন, বাড়ুন এবং আপনার লক্ষ্য অর্জন করুন।
+            আমরা ডেভেলপার এবং ডিজাইনারদের একটি টিম, যারা ডিজিটাল পণ্য তৈরি করতে ভালোবাসে। আমাদের লক্ষ্য হলো ব্যবসার জন্য সুন্দর, কার্যকরী এবং সাশ্রয়ী মূল্যের সমাধান তৈরি করা।
           </p>
         </div>
       </section>
@@ -23,10 +23,10 @@ export default function AboutPage() {
                 আমাদের গল্প
               </h2>
               <p className="mt-4 text-muted-foreground">
-                ২০২৪ সালে প্রতিষ্ঠিত, স্কিল নেভিগেটরের জন্ম একটি সাধারণ ধারণা থেকে: শেখা একটি জীবনব্যাপী অভিযান হওয়া উচিত, কোনো বোঝা নয়। আমরা প্রচলিত শিক্ষা এবং আধুনিক চাকরির বাজারের দ্রুত পরিবর্তনশীল চাহিদার মধ্যে একটি ফাঁক দেখেছি। আমাদের প্ল্যাটফর্মটি সেই ফাঁক পূরণ করার জন্য তৈরি করা হয়েছিল, যা শিল্প বিশেষজ্ঞদের দ্বারা ডিজাইন করা নমনীয়, আকর্ষক এবং বাস্তবসম্মত কোর্স সরবরাহ করে।
+                ডিজিটাল হাব-এর যাত্রা শুরু হয় একটি সাধারণ চিন্তা থেকে: সবার জন্য মানসম্মত ডিজিটাল পণ্য সহজলভ্য করা। আমরা দেখেছি যে, অনেকেই ভালো মানের ওয়েবসাইট থিম বা ডিজিটাল পণ্যের জন্য অনেক বেশি খরচ করতে বাধ্য হন। 
               </p>
               <p className="mt-4 text-muted-foreground">
-                আজ, আমরা শিক্ষার্থী, প্রশিক্ষক এবং উদ্ভাবকদের একটি সমৃদ্ধ সম্প্রদায়, যারা সকলেই জ্ঞান ভাগ করে নিতে এবং ব্যক্তিদের তাদের পূর্ণ সম্ভাবনা বিকাশে ক্ষমতায়নের জন্য আগ্রহী।
+                এই সমস্যার সমাধান হিসেবে আমরা একটি প্ল্যাটফর্ম তৈরি করেছি, যেখানে সাশ্রয়ী মূল্যে আকর্ষণীয় এবং প্রফেশনাল ডিজিটাল পণ্য পাওয়া যায়। আজ আমরা হাজারো সন্তুষ্ট গ্রাহকের একটি পরিবার, যারা আমাদের পণ্যের মাধ্যমে তাদের ব্যবসাকে এগিয়ে নিয়ে যাচ্ছেন।
               </p>
             </div>
             <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg">
@@ -50,21 +50,21 @@ export default function AboutPage() {
                 <Target className="h-8 w-8" />
               </div>
               <h3 className="font-headline text-2xl font-bold">আমাদের মিশন</h3>
-              <p className="mt-2 text-muted-foreground">একটি গতিশীল এবং সহজলভ্য শিক্ষার পরিবেশ প্রদান করা যা ব্যক্তিদের ব্যক্তিগত এবং পেশাগত উন্নতির জন্য প্রয়োজনীয় দক্ষতা অর্জনে সক্ষম করে।</p>
+              <p className="mt-2 text-muted-foreground">আমাদের লক্ষ্য হলো উচ্চ-মানের ডিজিটাল পণ্য তৈরি করা, যা ব্যবহার করা সহজ এবং দেখতে আকর্ষণীয়। আমরা গ্রাহকদের সেরা অভিজ্ঞতা দিতে প্রতিশ্রুতিবদ্ধ।</p>
             </div>
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Eye className="h-8 w-8" />
               </div>
               <h3 className="font-headline text-2xl font-bold">আমাদের ভিশন</h3>
-              <p className="mt-2 text-muted-foreground">দক্ষতা বিকাশের জন্য শীর্ষস্থানীয় বিশ্বব্যাপী প্ল্যাটফর্ম হওয়া, যা আমাদের মানসম্মত সামগ্রী, উদ্ভাবনী প্রযুক্তি এবং সহায়ক সম্প্রদায়ের জন্য স্বীকৃত।</p>
+              <p className="mt-2 text-muted-foreground">ডিজিটাল পণ্যের জন্য একটি বিশ্বস্ত এবং নির্ভরযোগ্য মার্কেটপ্লেস হিসেবে নিজেদের প্রতিষ্ঠা করা, যেখানে গুণমান এবং গ্রাহক সন্তুষ্টিই প্রধান।</p>
             </div>
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Gem className="h-8 w-8" />
               </div>
               <h3 className="font-headline text-2xl font-bold">আমাদের মূল্যবোধ</h3>
-              <p className="mt-2 text-muted-foreground">আমরা জীবনব্যাপী শিক্ষা, শিক্ষাদানে শ্রেষ্ঠত্ব, সম্প্রদায় গঠন এবং সকলের জন্য একটি উন্নত ভবিষ্যৎ তৈরি করতে উদ্ভাবনকে আলিঙ্গন করায় বিশ্বাস করি।</p>
+              <p className="mt-2 text-muted-foreground">আমরা সৃজনশীলতা, সততা, গ্রাহক সেবা এবং উদ্ভাবনে বিশ্বাসী। আমরা প্রতিনিয়ত নিজেদের উন্নত করার চেষ্টা করি।</p>
             </div>
           </div>
         </div>

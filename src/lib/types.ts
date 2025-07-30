@@ -1,25 +1,17 @@
 import type { LucideIcon } from "lucide-react";
 
-export type Course = {
+export type Project = {
   id: number;
   title: string;
   description: string;
   category: string;
-  level: 'শিক্ষানবিশ' | 'মধ্যবর্তী' | 'উন্নত';
   price: number;
-  duration: string;
-  instructor: {
-    name: string;
-    avatar: string;
-  };
-  rating: number;
-  reviewCount: number;
   imageUrl: string;
-  learningOutcomes: string[];
+  demoUrl: string;
   isFeatured?: boolean;
 };
 
-export type CourseCategory = {
+export type ProjectCategory = {
     name: string;
     icon: LucideIcon;
 };

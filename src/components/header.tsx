@@ -11,7 +11,7 @@ import Logo from './logo';
 
 const navLinks = [
   { href: '/', label: 'হোম' },
-  { href: '/courses', label: 'কোর্সসমূহ' },
+  { href: '/courses', label: 'প্রজেক্টসমূহ' },
   { href: '/about', label: 'আমাদের সম্পর্কে' },
   { href: '/contact', label: 'যোগাযোগ' },
 ];
@@ -43,7 +43,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost">লগইন</Button>
-          <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>সাইন আপ</Button>
+          <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>একাউন্ট খুলুন</Button>
         </div>
 
         <div className="md:hidden">
@@ -73,7 +73,7 @@ export default function Header() {
                 </nav>
                 <div className="mt-4 flex flex-col gap-2">
                   <Button variant="outline">লগইন</Button>
-                  <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>সাইন আপ</Button>
+                  <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>একাউন্ট খুলুন</Button>
                 </div>
               </div>
             </SheetContent>

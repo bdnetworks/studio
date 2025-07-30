@@ -14,7 +14,7 @@ export default function ContactPage() {
             যোগাযোগ করুন
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            প্রশ্ন বা মতামত আছে? আমরা আপনার কাছ থেকে শুনতে চাই। আমাদের সাথে যোগাযোগ করুন, এবং আমরা যত তাড়াতাড়ি সম্ভব আপনার কাছে ফিরে আসব।
+            আপনার কোনো প্রশ্ন, মতামত বা কাস্টম প্রজেক্টের জন্য আমাদের সাথে যোগাযোগ করতে পারেন। আমরা আপনাকে সাহায্য করতে সর্বদা প্রস্তুত।
           </p>
         </div>
       </section>
@@ -27,24 +27,24 @@ export default function ContactPage() {
                 <div className="mt-1 flex-shrink-0 text-primary"><Mail className="h-6 w-6" /></div>
                 <div>
                   <h3 className="text-lg font-semibold">ইমেইল</h3>
-                  <p className="text-muted-foreground">আমাদের একটি ইমেল পাঠান</p>
-                  <a href="mailto:support@skillnavigator.com" className="text-primary hover:underline">support@skillnavigator.com</a>
+                  <p className="text-muted-foreground">সরাসরি ইমেইল করুন</p>
+                  <a href="mailto:support@digitalhub.com" className="text-primary hover:underline">support@digitalhub.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="mt-1 flex-shrink-0 text-primary"><Phone className="h-6 w-6" /></div>
                 <div>
-                  <h3 className="text-lg font-semibold">ফোন</h3>
-                  <p className="text-muted-foreground">সোম-শুক্র সকাল ৯টা থেকে বিকাল ৫টা পর্যন্ত</p>
-                  <a href="tel:+1234567890" className="text-primary hover:underline">+১ (২৩৪) ৫৬৭-৮৯০</a>
+                  <h3 className="text-lg font-semibold">হোয়াটসঅ্যাপ</h3>
+                  <p className="text-muted-foreground">যেকোনো প্রয়োজনে মেসেজ দিন</p>
+                  <a href="https://wa.me/1234567890" target="_blank" className="text-primary hover:underline">+১ (২৩৪) ৫৬৭-৮৯০</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="mt-1 flex-shrink-0 text-primary"><MapPin className="h-6 w-6" /></div>
                 <div>
                   <h3 className="text-lg font-semibold">অফিস</h3>
-                  <p className="text-muted-foreground">১২৩ লার্নিং লেন, স্যুট ১০০</p>
-                  <p className="text-muted-foreground">এডুকেশন সিটি, ইডি ৫৪৩২১</p>
+                  <p className="text-muted-foreground">১২৩ ক্রিয়েটিভ রোড, স্যুট ১০০</p>
+                  <p className="text-muted-foreground">ডিজিটাল সিটি, ডিজি ১২৩৪৫</p>
                 </div>
               </div>
             </div>
@@ -55,21 +55,21 @@ export default function ContactPage() {
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="firstName">নামের প্রথম অংশ</Label>
-                        <Input id="firstName" placeholder="জন" />
+                        <Label htmlFor="firstName">আপনার নাম</Label>
+                        <Input id="firstName" placeholder="আপনার পুরো নাম" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="lastName">নামের শেষ অংশ</Label>
-                        <Input id="lastName" placeholder="ডো" />
+                        <Label htmlFor="email">আপনার ইমেইল</Label>
+                        <Input id="email" type="email" placeholder="name@example.com" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">ইমেইল</Label>
-                      <Input id="email" type="email" placeholder="john.doe@example.com" />
+                      <Label htmlFor="subject">বিষয়</Label>
+                      <Input id="subject" placeholder="আপনার বার্তার বিষয়" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message">বার্তা</Label>
-                      <Textarea id="message" placeholder="আপনার বার্তা..." rows={5} />
+                      <Textarea id="message" placeholder="আপনার বার্তাটি এখানে লিখুন..." rows={5} />
                     </div>
                     <Button type="submit" className="w-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>বার্তা পাঠান</Button>
                   </form>

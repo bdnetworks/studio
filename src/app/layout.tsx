@@ -19,8 +19,8 @@ const fontHeadline = Hind_Siliguri({
 });
 
 export const metadata: Metadata = {
-  title: 'স্কিল নেভিগেটর',
-  description: 'আপনার নতুন দক্ষতা অর্জনের পথ প্রদর্শক।',
+  title: 'ডিজিটাল হাব - আপনার ডিজিটাল পণ্যের বিশ্বস্ত ঠিকানা',
+  description: 'আপনার ব্যবসার জন্য আকর্ষণীয় ওয়েবসাইট থিম এবং ডিজিটাল পণ্য কিনুন।',
 };
 
 export default function RootLayout({

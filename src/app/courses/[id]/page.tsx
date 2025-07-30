@@ -1,32 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle, Clock, BarChart2, Star, Users } from "lucide-react";
+import { CheckCircle, Clock, BarChart2, Star, Users, Eye, ShoppingCart } from "lucide-react";
 
-import { allCourses } from "@/lib/data";
+import { allProjects } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
-type CoursePageProps = {
+type ProjectPageProps = {
   params: {
     id: string;
   };
 };
 
 export async function generateStaticParams() {
-    return allCourses.map((course) => ({
-      id: course.id.toString(),
+    return allProjects.map((project) => ({
+      id: project.id.toString(),
     }));
 }
 
-export default function CoursePage({ params }: CoursePageProps) {
-  const course = allCourses.find((c) => c.id.toString() === params.id);
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const project = allProjects.find((p) => p.id.toString() === params.id);
 
-  if (!course) {
+  if (!project) {
     notFound();
   }
+
+  const features = [
+    "সম্পূর্ণ রেসপন্সিভ ডিজাইন",
+    "সহজেই কাস্টমাইজযোগ্য",
+    "SEO অপ্টিমাইজড",
+    "দ্রুত লোডিং গতি",
+    "আজীবন বিনামূল্যে আপডেট",
+    "৬ মাসের সাপোর্ট"
+  ]
 
   return (
     <div className="bg-primary/5">
@@ -34,32 +42,20 @@ export default function CoursePage({ params }: CoursePageProps) {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
                 {/* Left Column */}
                 <div className="lg:col-span-2">
-                    <Badge className="mb-2" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>{course.category}</Badge>
-                    <h1 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">{course.title}</h1>
-                    <p className="mt-4 text-lg text-muted-foreground">{course.description}</p>
-                    
-                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                        <div className="flex items-center gap-2">
-                            <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                            <span className="font-semibold">{course.rating}</span>
-                            <span className="text-muted-foreground">({course.reviewCount.toLocaleString()} রেটিং)</span>
-                        </div>
-                         <div className="flex items-center gap-2">
-                            <Users className="h-5 w-5 text-muted-foreground" />
-                            <span>প্রশিক্ষক {course.instructor.name}</span>
-                        </div>
-                    </div>
+                    <Badge className="mb-2" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>{project.category}</Badge>
+                    <h1 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">{project.title}</h1>
+                    <p className="mt-4 text-lg text-muted-foreground">{project.description}</p>
 
                     <Card className="mt-8">
                         <CardHeader>
-                            <h2 className="font-headline text-xl font-bold">আপনি যা শিখবেন</h2>
+                            <h2 className="font-headline text-xl font-bold">প্রজেক্টের বৈশিষ্ট্য</h2>
                         </CardHeader>
                         <CardContent>
                             <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                {course.learningOutcomes.map((outcome, index) => (
+                                {features.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-3">
                                         <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                                        <span>{outcome}</span>
+                                        <span>{feature}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -74,34 +70,33 @@ export default function CoursePage({ params }: CoursePageProps) {
                         <Card className="overflow-hidden">
                             <div className="relative h-56 w-full">
                                 <Image 
-                                    src={course.imageUrl} 
-                                    alt={course.title} 
+                                    src={project.imageUrl} 
+                                    alt={project.title} 
                                     fill 
                                     className="object-cover" 
-                                    data-ai-hint="online course cover"
+                                    data-ai-hint="website theme cover"
                                 />
                             </div>
                             <CardContent className="p-6">
-                                <div className="mb-6 text-center">
-                                    <p className="font-headline text-4xl font-bold">${course.price}</p>
+                                <div className="mb-4 text-center">
+                                    <p className="font-headline text-4xl font-bold">${project.price}</p>
+                                    <p className="text-sm text-muted-foreground">এককালীন পেমেন্ট</p>
                                 </div>
-                                <Button size="lg" className="w-full" asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
-                                    <Link href="https://wa.me/1234567890?text=I'm%20interested%20in%20the%20course:%20React%20-%20The%20Complete%20Guide" target="_blank">এখনই ভর্তি হন</Link>
-                                </Button>
-                                <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-                                    <li className="flex items-center gap-3">
-                                        <Clock className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">সময়কাল:</span> {course.duration}</div>
-                                    </li>
-                                     <li className="flex items-center gap-3">
-                                        <BarChart2 className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">দক্ষতার স্তর:</span> {course.level}</div>
-                                    </li>
-                                     <li className="flex items-center gap-3">
-                                        <CheckCircle className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">সমাপ্তি সার্টিফিকেট</span></div>
-                                    </li>
-                                </ul>
+                                <div className="flex flex-col gap-3">
+                                    <Button size="lg" className="w-full" asChild>
+                                        <Link href={project.demoUrl} target="_blank">
+                                            <Eye className="mr-2" />
+                                            লাইভ ডেমো দেখুন
+                                        </Link>
+                                    </Button>
+                                    <Button size="lg" className="w-full" asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
+                                        <Link href={`https://wa.me/1234567890?text=I'm%20interested%20in%20the%20project:%20${encodeURIComponent(project.title)}`} target="_blank">
+                                            <ShoppingCart className="mr-2" />
+                                            হোয়াটসঅ্যাপে কিনুন
+                                        </Link>
+                                    </Button>
+                                </div>
+                                <p className="mt-4 text-center text-xs text-muted-foreground">নিরাপদ পেমেন্ট এবং তাৎক্ষণিক ডাউনলোড।</p>
                             </CardContent>
                         </Card>
                     </div>

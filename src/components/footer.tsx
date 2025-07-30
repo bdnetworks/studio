@@ -4,9 +4,9 @@ import Logo from './logo';
 
 export default function Footer() {
   const navLinks = [
-    { title: 'কোম্পানি', links: ['আমাদের সম্পর্কে', 'কোর্সসমূহ', 'যোগাযোগ'] },
-    { title: 'প্ল্যাটফর্ম', links: ['লাইব্রেরি ব্রাউজ করুন', 'সদস্য হন', 'সাইন ইন করুন'] },
-    { title: 'সাপোর্ট', links: ['সাধারণ প্রশ্নাবলী', 'সহায়তা কেন্দ্র', 'আমাদের সাথে যোগাযোগ করুন'] },
+    { title: 'আমাদের সম্পর্কে', links: ['আমাদের টিম', 'ব্লগ', 'যোগাযোগ'] },
+    { title: 'পণ্যসমূহ', links: ['থিম ও টেমপ্লেট', 'কাস্টম প্রজেক্ট', 'সাপোর্ট'] },
+    { title: 'নীতিমালা', links: ['গোপনীয়তা নীতি', 'ব্যবহারের শর্তাবলী', 'ফেরত নীতি'] },
   ];
 
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 text-muted-foreground">
-              আপনার নতুন দক্ষতা অর্জন এবং আপনার ক্যারিয়ার উন্নত করার জন্য চূড়ান্ত গাইড।
+              আপনার ডিজিটাল যাত্রাকে সহজ করতে আমরা আধুনিক এবং আকর্ষণীয় ওয়েবসাইট থিম ও ডিজিটাল পণ্য সরবরাহ করি।
             </p>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary">
@@ -46,7 +46,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} স্কিল নেভিগেটর। সর্বস্বত্ব সংরক্ষিত।</p>
+          <p>&copy; {new Date().getFullYear()} ডিজিটাল হাব। সর্বস্বত্ব সংরক্ষিত।</p>
         </div>
       </div>
     </footer>
