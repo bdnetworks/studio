@@ -1,10 +1,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper } from 'lucide-react';
+import { ArrowRight, BarChart, BookOpen, Search, ShieldCheck, Star, Palette, Code, Newspaper, Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { projectCategories, featuredProjects, testimonials } from '@/lib/data';
@@ -14,60 +13,80 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 export default function Home() {
+  const graphicCategories = [
+    {
+      title: 'ফ্রিল্যান্সিং কমপ্লিট গাইডলাইন',
+      image: 'https://placehold.co/300x400.png',
+      hint: 'freelancing guide'
+    },
+    {
+      title: 'ওয়েব ডেভেলপমেন্ট',
+      image: 'https://placehold.co/300x400.png',
+      hint: 'web development'
+    },
+    {
+      title: 'ভিডিও এডিটিং',
+      image: 'https://placehold.co/300x400.png',
+      hint: 'video editing'
+    },
+    {
+      title: 'গ্রাফিক ডিজাইন',
+      image: 'https://placehold.co/300x400.png',
+      hint: 'graphic design'
+    },
+    {
+      title: 'ডিজিটাল মার্কেটিং',
+      image: 'https://placehold.co/300x400.png',
+      hint: 'digital marketing'
+    },
+  ]
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <section className="relative bg-[#201A51] py-20 md:py-32 overflow-hidden text-white">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mx-auto max-w-4xl">
-            <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              লার্নিং প্ল্যাটফর্ম
-            </div>
-            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight text-white md:text-6xl">
-              <span className="bg-gradient-to-br from-[#b34fb3] to-[#091f6e] bg-clip-text text-transparent">স্কিল শিখুন,</span> নিজেকে গড়ুন
+            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              স্কিল শিখুন এর হাত ধরে শিখুন ঘরে বসে আয় করার মাধ্যম!
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/80">
-              আপনার ব্যবসার জন্য আকর্ষণীয় ওয়েবসাইট থিম এবং ডিজিটাল পণ্য কিনুন। আজই আপনার অনলাইন যাত্রা শুরু করুন।
+            <p className="mt-6 text-lg text-indigo-200">
+              সাশ্রয়ী মূল্যে ঘরে বসে লাইভ ক্লাস করুন ইন্সট্রাক্টর এর সাথে!
             </p>
-            <div className="mx-auto mt-8 max-w-xl">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="একটি থিম খুঁজুন, যেমন 'ই-কমার্স'"
-                  className="h-14 w-full rounded-full bg-background pl-12 pr-32 text-base"
-                />
-                <Button type="submit" className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
-                  অনুসন্ধান
-                </Button>
-              </div>
+            <div className="mx-auto mt-8 max-w-md">
+              <Card className="bg-white/10 border-white/20 text-white">
+                  <CardContent className="p-4">
+                      <p className="font-medium">কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য কল করুন</p>
+                      <Button variant="ghost" className="mt-2 text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 w-full h-14">
+                          <Phone className="mr-2"/> 09613823645
+                      </Button>
+                  </CardContent>
+              </Card>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%]">
-            <Image src="https://skill-shikhun.netlify.app/images/hero-graphics.png" alt="Hero Graphics" width={1152} height={384} className="w-full h-auto" />
         </div>
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="py-16 md:py-24 pt-32">
+      <section id="categories" className="py-16 md:py-24 bg-[#201A51] -mt-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            জনপ্রিয় ক্যাটাগরি
-          </h2>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {projectCategories.map((category) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {graphicCategories.map((category) => (
               <Card
-                key={category.name}
-                className="group transform cursor-pointer text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                key={category.title}
+                className="group relative cursor-pointer text-center overflow-hidden rounded-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
-                <CardContent className="flex flex-col items-center justify-center p-6">
-                  <div className="mb-4 rounded-full bg-primary/10 p-4 transition-colors duration-300 group-hover:bg-primary">
-                    <category.icon className="h-8 w-8 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{category.name}</h3>
-                </CardContent>
+                <Image 
+                  src={category.image}
+                  alt={category.title}
+                  width={300}
+                  height={400}
+                  data-ai-hint={category.hint}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-end p-4">
+                   <Badge className="absolute top-2 left-2 bg-red-600 text-white border-red-600">LIVE BATCH</Badge>
+                   <h3 className="font-semibold text-white text-lg">{category.title}</h3>
+                </div>
               </Card>
             ))}
           </div>

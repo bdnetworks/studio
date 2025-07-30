@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Mail, MessageSquare } from 'lucide-react';
+import { Menu, Mail, MessageSquare, Search } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -43,6 +43,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <Button variant="ghost" size="icon">
+            <Search />
+          </Button>
           <Button asChild variant="ghost">
             <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
           </Button>
@@ -86,6 +89,9 @@ export default function Header() {
                   </Button>
                   <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366!important] hover:text-white">
                      <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
+                  </Button>
+                  <Button variant="outline" className="justify-start">
+                    <Search className="mr-2" /> অনুসন্ধান
                   </Button>
                 </div>
               </div>
