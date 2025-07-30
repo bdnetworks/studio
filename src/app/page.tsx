@@ -21,23 +21,62 @@ export default function Home() {
     { name: 'নেক্সট.জেএস', icon: LayoutDashboard },
     { name: 'UI/UX ডিজাইন', icon: Palette },
   ];
+
+   const courses = [
+    {
+      title: 'ফ্রিল্যান্সিং কমপ্লিট গাইডলাইন',
+      price: '৭৫০৳',
+      batch: 'Live Batch',
+      promo: null,
+      image: 'https://skill-shikhun.netlify.app/images/courses/freelancing.png',
+    },
+    {
+      title: 'ওয়েব ডেভেলপমেন্ট',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/web-development.png',
+    },
+    {
+      title: 'ভিডিও এডিটিং',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/video-editing.png',
+    },
+    {
+      title: 'গ্রাফিক ডিজাইন',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/graphic-design.png',
+    },
+    {
+      title: 'ডিজিটাল মার্কেটিং',
+      price: '৯৯৯',
+      originalPrice: '১,৫০০',
+      promo: 'SKILL999',
+      batch: 'Live Batch',
+      image: 'https://skill-shikhun.netlify.app/images/courses/digital-marketing.png',
+    },
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <section className="relative bg-gradient-to-b from-[#3b0764] to-[#1e0a35] py-20 md:py-24 text-white overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mx-auto max-w-4xl">
-             <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                লার্নিং প্ল্যাটফর্ম
-              </div>
-            <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight text-white md:text-6xl">
-              <span className="bg-gradient-to-br from-[#b34fb3] to-[#091f6e] bg-clip-text text-transparent">স্কিল শিখুন,</span> নিজেকে গড়ুন
+            <h1 className="font-headline mt-4 text-3xl font-bold tracking-tight md:text-5xl">
+              স্কিল শিখুন এর হাত ধরে শিখুন ঘরে বসে আয় করার মাধ্যম!
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/80">
-              আপনার ব্যবসার জন্য আকর্ষণীয় ওয়েবসাইট থিম এবং ডিজিটাল পণ্য কিনুন। আজই আপনার অনলাইন যাত্রা শুরু করুন।
+            <p className="mt-4 text-lg text-white/80">
+              সাশ্রয়ী মূল্যে ঘরে বসে লাইভ ক্লাস করুন ইন্সট্রাক্টর এর সাথে!
             </p>
-             <div className="mx-auto mt-8 max-w-md">
+             <div className="mx-auto mt-6 max-w-md">
               <Card className="bg-white/10 border-white/20 text-white">
                   <CardContent className="p-4">
                       <p className="font-medium">কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য কল করুন</p>
@@ -49,28 +88,37 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%]">
-             <Image src="https://skill-shikhun.netlify.app/images/hero-graphics.png" alt="Hero Graphics" width={1152} height={384} className="w-full h-auto" />
-        </div>
       </section>
 
-      {/* Categories Section */}
-      <section id="categories" className="py-16 md:py-24 pt-8">
+      {/* Courses Section */}
+      <section className="py-16 md:py-24 bg-[#1e0a35]">
         <div className="container mx-auto px-4">
-            <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              জনপ্রিয় ক্যাটাগরি
-            </h2>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {graphicCategories.map((category) => (
-              <Card
-                key={category.name}
-                className="group transform cursor-pointer text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
-                <CardContent className="flex flex-col items-center justify-center p-6">
-                  <div className="mb-4 rounded-full bg-primary/10 p-4 transition-colors duration-300 group-hover:bg-primary">
-                    <category.icon className="h-8 w-8 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {courses.map((course, index) => (
+              <Card key={index} className="bg-white/5 border-white/20 text-white overflow-hidden group">
+                <div className="relative">
+                  <Image src={course.image} alt={course.title} width={300} height={300} className="w-full h-auto" />
+                  <Badge className="absolute top-2 left-2 bg-red-600 text-white">{course.batch}</Badge>
+                </div>
+                <CardContent className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">{course.title}</h3>
+                  <div className="mt-4">
+                    {course.originalPrice && (
+                      <span className="text-sm line-through text-white/70 mr-2">৳{course.originalPrice}</span>
+                    )}
+                    <span className="text-2xl font-bold text-amber-400">৳{course.price}</span>
                   </div>
-                  <h3 className="font-semibold text-foreground">{category.name}</h3>
+                   {course.promo && (
+                    <div className="mt-2">
+                        <p className="text-xs">PROMO CODE</p>
+                        <p className="font-bold text-lg tracking-widest">{course.promo}</p>
+                    </div>
+                  )}
+                  {!course.promo && (
+                      <div className="mt-2">
+                          <p className="text-sm">ক্র্যাশ কোর্স</p>
+                      </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
