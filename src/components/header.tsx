@@ -27,7 +27,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <nav className="hidden items-center gap-6 md:flex flex-1 ml-6">
+        <nav className="hidden items-center gap-6 md:flex ml-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -42,7 +42,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 md:flex ml-auto">
           <Button variant="ghost" size="icon">
             <Search />
           </Button>
