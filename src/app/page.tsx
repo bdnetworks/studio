@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-purple-500 to-accent py-20 md:py-32">
+      <section className="relative bg-gradient-to-br from-primary/80 via-primary to-purple-600/90 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="mx-auto max-w-3xl">
