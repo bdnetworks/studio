@@ -25,29 +25,28 @@ export default function Header() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center px-4">
         <div className="flex items-center gap-6">
           <Logo />
+           <nav className="hidden items-center gap-6 md:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'text-lg font-medium transition-colors hover:text-primary',
+                    pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
         </div>
-
-        <nav className="hidden items-center gap-6 md:flex ml-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-lg font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
 
         <div className="hidden items-center gap-2 md:flex ml-auto">
           <Button variant="ghost" size="icon">
             <Search />
           </Button>
-          <Button variant="ghost" size="icon">
-            <Mail />
+          <Button asChild size="icon" variant="ghost">
+             <a href="mailto:support@digitalhub.com"><Mail /></a>
           </Button>
           <Button asChild size="icon" className="bg-transparent text-foreground hover:bg-[#25D366] hover:text-white">
             <a href="https://wa.me/1234567890" target="_blank"><MessageSquare /></a>
