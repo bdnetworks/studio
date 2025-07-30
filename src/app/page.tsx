@@ -16,30 +16,31 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-primary/10 py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative bg-primary/10 py-20 md:py-32 bg-cover bg-center" style={{backgroundImage: "url('https://placehold.co/1920x1080.png')"}}>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto px-4 text-center relative">
           <div className="mx-auto max-w-3xl">
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-              Navigate Your Skills, Master Your Future
+            <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-6xl">
+              আপনার দক্ষতা বাড়ান, ভবিষ্যৎ গড়ুন
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Discover thousands of courses to help you achieve your learning goals. What do you want to learn today?
+            <p className="mt-6 text-lg text-primary-foreground/80">
+              আপনার শেখার লক্ষ্য অর্জনে সহায়তা করার জন্য হাজার হাজার কোর্স আবিষ্কার করুন। আজ আপনি কি শিখতে চান?
             </p>
             <div className="mx-auto mt-8 max-w-xl">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="search"
-                  placeholder="Search for a course, e.g. 'React'"
+                  placeholder="একটি কোর্স খুঁজুন, যেমন 'রিঅ্যাক্ট'"
                   className="h-14 w-full rounded-full bg-background pl-12 pr-32 text-base"
                 />
                 <Button type="submit" className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
-                  Search
+                  অনুসন্ধান
                 </Button>
               </div>
               <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-                <span className="text-sm font-medium">Popular:</span>
-                {['Design', 'Web Development', 'Marketing', 'Python'].map((tag) => (
+                <span className="text-sm font-medium text-white">জনপ্রিয়:</span>
+                {['ডিজাইন', 'ওয়েব ডেভেলপমেন্ট', 'মার্কেটিং', 'পাইথন'].map((tag) => (
                   <Badge key={tag} variant="secondary" className="cursor-pointer hover:bg-primary/20">
                     {tag}
                   </Badge>
@@ -54,7 +55,7 @@ export default function Home() {
       <section id="categories" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Explore Top Categories
+            প্রধান বিভাগগুলো দেখুন
           </h2>
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {courseCategories.map((category) => (
@@ -85,10 +86,10 @@ export default function Home() {
       <section id="featured-courses" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Featured Courses
+            বিশেষ কোর্সসমূহ
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Handpicked courses by our experts to get you started on your learning journey.
+            আপনার শেখার যাত্রা শুরু করার জন্য আমাদের বিশেষজ্ঞদের দ্বারা নির্বাচিত কোর্স।
           </p>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {featuredCourses.map((course) => (
@@ -97,7 +98,7 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <Button asChild size="lg" variant="outline" style={{borderColor: 'var(--accent)', color: 'var(--accent)'}} className="hover:bg-accent/10 hover:text-accent">
-              <Link href="/courses">Explore All Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link href="/courses">সব কোর্স দেখুন <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
@@ -119,31 +120,31 @@ export default function Home() {
             </div>
             <div>
               <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Why Skill Navigator is Your Best Choice
+                কেন স্কিল নেভিগেটর আপনার সেরা পছন্দ
               </h2>
               <p className="mt-4 text-muted-foreground">
-                We are dedicated to providing the best learning experience with features tailored for your success.
+                আপনার সাফল্যের জন্য তৈরি করা বৈশিষ্ট্যগুলির সাথে সেরা শেখার অভিজ্ঞতা প্রদানে আমরা প্রতিশ্রুতিবদ্ধ।
               </p>
               <ul className="mt-8 space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="mt-1 flex-shrink-0"><BookOpen className="h-6 w-6 text-primary" /></div>
                   <div>
-                    <h3 className="font-semibold">Expert-Led Courses</h3>
-                    <p className="text-muted-foreground">Learn from industry leaders and certified instructors.</p>
+                    <h3 className="font-semibold">বিশেষজ্ঞ-পরিচালিত কোর্স</h3>
+                    <p className="text-muted-foreground">শিল্পের সেরা এবং প্রত্যয়িত প্রশিক্ষকদের কাছ থেকে শিখুন।</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="mt-1 flex-shrink-0"><BarChart className="h-6 w-6 text-primary" /></div>
                   <div>
-                    <h3 className="font-semibold">Flexible Learning Paths</h3>
-                    <p className="text-muted-foreground">Learn at your own pace, anytime, anywhere.</p>
+                    <h3 className="font-semibold">নমনীয় শিক্ষার পথ</h3>
+                    <p className="text-muted-foreground">আপনার নিজের গতিতে, যেকোনো সময়, যেকোনো জায়গায় শিখুন।</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="mt-1 flex-shrink-0"><ShieldCheck className="h-6 w-6 text-primary" /></div>
                   <div>
-                    <h3 className="font-semibold">Verified Certificates</h3>
-                    <p className="text-muted-foreground">Earn certificates to showcase your new skills and achievements.</p>
+                    <h3 className="font-semibold">যাচাইকৃত সার্টিফিকেট</h3>
+                    <p className="text-muted-foreground">আপনার নতুন দক্ষতা এবং অর্জনগুলি প্রদর্শন করতে সার্টিফিকেট অর্জন করুন।</p>
                   </div>
                 </li>
               </ul>
@@ -156,10 +157,10 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            What Our Students Say
+            আমাদের শিক্ষার্থীরা যা বলে
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Real stories from learners who have transformed their careers with Skill Navigator.
+            স্কিল নেভিগেটরের মাধ্যমে যারা তাদের ক্যারিয়ার পরিবর্তন করেছেন তাদের বাস্তব গল্প।
           </p>
           <Carousel
             opts={{ align: "start", loop: true }}
@@ -205,13 +206,13 @@ export default function Home() {
           <div className="grid items-center gap-8 py-16 md:grid-cols-2 md:py-24">
             <div>
               <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Become an Instructor
+                একজন প্রশিক্ষক হন
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Join our community of expert instructors and share your knowledge with learners around the globe. Create an impact and earn on your terms.
+                আমাদের বিশেষজ্ঞ প্রশিক্ষকদের সম্প্রদায়ে যোগ দিন এবং বিশ্বজুড়ে শিক্ষার্থীদের সাথে আপনার জ্ঞান ভাগ করুন। প্রভাব তৈরি করুন এবং আপনার শর্তে উপার্জন করুন।
               </p>
               <Button asChild size="lg" className="mt-8" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>
-                <Link href="/teach">Start Teaching Today <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/teach">আজই পড়ানো শুরু করুন <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
             <div className="relative hidden h-full min-h-[250px] md:block">

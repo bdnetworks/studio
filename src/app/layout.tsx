@@ -1,24 +1,26 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Hind_Siliguri } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
-const fontBody = Inter({ 
-  subsets: ['latin'],
+const fontBody = Hind_Siliguri({ 
+  subsets: ['bengali'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
 });
 
-const fontHeadline = Space_Grotesk({
-  subsets: ['latin'],
+const fontHeadline = Hind_Siliguri({
+  subsets: ['bengali'],
+  weight: ['600', '700'],
   variable: '--font-headline',
 });
 
 export const metadata: Metadata = {
-  title: 'Skill Navigator',
-  description: 'Your guide to mastering new skills.',
+  title: 'স্কিল নেভিগেটর',
+  description: 'আপনার নতুন দক্ষতা অর্জনের পথ প্রদর্শক।',
 };
 
 export default function RootLayout({
@@ -27,11 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="bn" className="!scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn(fontBody.variable, fontHeadline.variable, 'font-body antialiased')}>
         <div className="flex min-h-screen flex-col">

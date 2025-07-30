@@ -21,12 +21,12 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Thinking...
+          ভাবছে...
         </>
       ) : (
         <>
           <Sparkles className="mr-2 h-4 w-4" />
-          Get Recommendations
+          সুপারিশ পান
         </>
       )}
     </Button>
@@ -52,37 +52,37 @@ export default function AiRecommendationEngine() {
                     <BrainCircuit className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                    <CardTitle className="font-headline">AI Course Navigator</CardTitle>
-                    <CardDescription>Let our AI find the perfect course for you.</CardDescription>
+                    <CardTitle className="font-headline">AI কোর্স নেভিগেটর</CardTitle>
+                    <CardDescription>আমাদের AI আপনার জন্য সেরা কোর্স খুঁজে দেবে।</CardDescription>
                 </div>
             </div>
           </CardHeader>
           <form action={formAction}>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="interests">Your Interests</Label>
+                <Label htmlFor="interests">আপনার আগ্রহ</Label>
                 <Textarea
                   id="interests"
                   name="interests"
-                  placeholder="e.g., building web apps, data visualization, mobile game development"
+                  placeholder="যেমন, ওয়েব অ্যাপ তৈরি, ডেটা ভিজ্যুয়ালাইজেশন, মোবাইল গেম ডেভেলপমেন্ট"
                   required
                 />
                  {state.error && <p className="mt-2 text-sm text-destructive">{state.error}</p>}
               </div>
               <div>
-                <Label htmlFor="pastEnrollment">Past Courses (Optional)</Label>
+                <Label htmlFor="pastEnrollment">পূর্ববর্তী কোর্স (ঐচ্ছিক)</Label>
                 <Input
                   id="pastEnrollment"
                   name="pastEnrollment"
-                  placeholder="e.g., Intro to Python, HTML & CSS Basics"
+                  placeholder="যেমন, পাইথনের ভূমিকা, এইচটিএমএল এবং সিএসএস বেসিকস"
                 />
               </div>
               <div>
-                <Label htmlFor="searchHistory">Search History (Optional)</Label>
+                <Label htmlFor="searchHistory">অনুসন্ধানের ইতিহাস (ঐচ্ছিক)</Label>
                 <Input
                   id="searchHistory"
                   name="searchHistory"
-                  placeholder="e.g., javascript frameworks, best design tools"
+                  placeholder="যেমন, জাভাস্ক্রিপ্ট ফ্রেমওয়ার্ক, সেরা ডিজাইন টুলস"
                 />
               </div>
             </CardContent>
@@ -94,7 +94,7 @@ export default function AiRecommendationEngine() {
       </div>
 
       <div className="lg:col-span-2">
-        <h3 className="font-headline text-2xl font-bold">Your Personalized Recommendations</h3>
+        <h3 className="font-headline text-2xl font-bold">আপনার ব্যক্তিগতকৃত সুপারিশ</h3>
         {state.courses && recommendedCourses.length > 0 && (
             <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
                 {recommendedCourses.map(course => (
@@ -104,7 +104,7 @@ export default function AiRecommendationEngine() {
         )}
         {state.courses && recommendedCourses.length === 0 && (
             <div className="mt-4 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
-                <p className="text-muted-foreground">Our AI couldn't find a direct match, but here are some popular starting points!</p>
+                <p className="text-muted-foreground">আমাদের AI সরাসরি কোনো মিল খুঁজে পায়নি, তবে এখানে কিছু জনপ্রিয় সূচনা পয়েন্ট রয়েছে!</p>
                 <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
                     {allCourses.slice(0, 2).map(course => (
                         <CourseCard key={course.id} course={course} />
@@ -115,9 +115,9 @@ export default function AiRecommendationEngine() {
         {!state.courses && !state.error && (
             <div className="mt-4 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
                 <Sparkles className="mx-auto h-12 w-12 text-muted-foreground" />
-                <h4 className="mt-4 text-lg font-semibold">Recommendations will appear here</h4>
+                <h4 className="mt-4 text-lg font-semibold">সুপারিশগুলি এখানে প্রদর্শিত হবে</h4>
                 <p className="mt-2 text-sm text-muted-foreground">
-                    Fill out the form to get started.
+                    শুরু করতে ফর্মটি পূরণ করুন।
                 </p>
             </div>
         )}

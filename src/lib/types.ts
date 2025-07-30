@@ -5,7 +5,7 @@ export type Course = {
   title: string;
   description: string;
   category: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
+  level: 'শিক্ষানবিশ' | 'মধ্যবর্তী' | 'উন্নত';
   price: number;
   duration: string;
   instructor: {

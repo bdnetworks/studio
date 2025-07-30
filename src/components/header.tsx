@@ -10,10 +10,10 @@ import { cn } from '@/lib/utils';
 import Logo from './logo';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'হোম' },
+  { href: '/courses', label: 'কোর্সসমূহ' },
+  { href: '/about', label: 'আমাদের সম্পর্কে' },
+  { href: '/contact', label: 'যোগাযোগ' },
 ];
 
 export default function Header() {
@@ -42,8 +42,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost">Login</Button>
-          <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>Sign Up</Button>
+          <Button variant="ghost">লগইন</Button>
+          <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>সাইন আপ</Button>
         </div>
 
         <div className="md:hidden">
@@ -72,8 +72,8 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-4 flex flex-col gap-2">
-                  <Button variant="outline">Login</Button>
-                  <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>Sign Up</Button>
+                  <Button variant="outline">লগইন</Button>
+                  <Button style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>সাইন আপ</Button>
                 </div>
               </div>
             </SheetContent>

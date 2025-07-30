@@ -41,17 +41,17 @@ export default function CoursePage({ params }: CoursePageProps) {
                         <div className="flex items-center gap-2">
                             <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                             <span className="font-semibold">{course.rating}</span>
-                            <span className="text-muted-foreground">({course.reviewCount.toLocaleString()} ratings)</span>
+                            <span className="text-muted-foreground">({course.reviewCount.toLocaleString()} রেটিং)</span>
                         </div>
                          <div className="flex items-center gap-2">
                             <Users className="h-5 w-5 text-muted-foreground" />
-                            <span>Taught by {course.instructor.name}</span>
+                            <span>প্রশিক্ষক {course.instructor.name}</span>
                         </div>
                     </div>
 
                     <Card className="mt-8">
                         <CardHeader>
-                            <h2 className="font-headline text-xl font-bold">What you'll learn</h2>
+                            <h2 className="font-headline text-xl font-bold">আপনি যা শিখবেন</h2>
                         </CardHeader>
                         <CardContent>
                             <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -84,19 +84,19 @@ export default function CoursePage({ params }: CoursePageProps) {
                                 <div className="mb-6 text-center">
                                     <p className="font-headline text-4xl font-bold">${course.price}</p>
                                 </div>
-                                <Button size="lg" className="w-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>Enroll Now</Button>
+                                <Button size="lg" className="w-full" style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}}>এখনই ভর্তি হন</Button>
                                 <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
                                     <li className="flex items-center gap-3">
                                         <Clock className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">Duration:</span> {course.duration}</div>
+                                        <div><span className="font-medium text-foreground">সময়কাল:</span> {course.duration}</div>
                                     </li>
                                      <li className="flex items-center gap-3">
                                         <BarChart2 className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">Skill Level:</span> {course.level}</div>
+                                        <div><span className="font-medium text-foreground">দক্ষতার স্তর:</span> {course.level}</div>
                                     </li>
                                      <li className="flex items-center gap-3">
                                         <CheckCircle className="h-5 w-5" />
-                                        <div><span className="font-medium text-foreground">Certificate of Completion</span></div>
+                                        <div><span className="font-medium text-foreground">সমাপ্তি সার্টিফিকেট</span></div>
                                     </li>
                                 </ul>
                             </CardContent>

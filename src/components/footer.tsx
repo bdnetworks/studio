@@ -4,9 +4,9 @@ import Logo from './logo';
 
 export default function Footer() {
   const navLinks = [
-    { title: 'Company', links: ['About', 'Courses', 'Contact'] },
-    { title: 'Platform', links: ['Browse Library', 'Become a Member', 'Sign In'] },
-    { title: 'Support', links: ['FAQs', 'Help Center', 'Contact Us'] },
+    { title: 'কোম্পানি', links: ['আমাদের সম্পর্কে', 'কোর্সসমূহ', 'যোগাযোগ'] },
+    { title: 'প্ল্যাটফর্ম', links: ['লাইব্রেরি ব্রাউজ করুন', 'সদস্য হন', 'সাইন ইন করুন'] },
+    { title: 'সাপোর্ট', links: ['সাধারণ প্রশ্নাবলী', 'সহায়তা কেন্দ্র', 'আমাদের সাথে যোগাযোগ করুন'] },
   ];
 
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 text-muted-foreground">
-              Your ultimate guide to mastering new skills and advancing your career.
+              আপনার নতুন দক্ষতা অর্জন এবং আপনার ক্যারিয়ার উন্নত করার জন্য চূড়ান্ত গাইড।
             </p>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary">
@@ -46,7 +46,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Skill Navigator. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} স্কিল নেভিগেটর। সর্বস্বত্ব সংরক্ষিত।</p>
         </div>
       </div>
     </footer>
