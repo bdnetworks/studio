@@ -46,11 +46,11 @@ export default function Header() {
           <Button variant="ghost" size="icon">
             <Search />
           </Button>
-          <Button asChild variant="ghost">
-            <a href="mailto:support@digitalhub.com"><Mail className="mr-2" /> ইমেইল করুন</a>
+          <Button asChild variant="ghost" size="icon">
+            <a href="mailto:support@digitalhub.com"><Mail /></a>
           </Button>
-          <Button asChild style={{backgroundColor: 'var(--accent)', color: 'var(--accent-foreground)'}} className="hover:bg-[#25D366!important] hover:text-white">
-            <a href="https://wa.me/1234567890" target="_blank"><MessageSquare className="mr-2" /> হোয়াটসঅ্যাপ</a>
+          <Button asChild size="icon" className="bg-transparent text-foreground hover:bg-[#25D366] hover:text-white">
+            <a href="https://wa.me/1234567890" target="_blank"><MessageSquare /></a>
           </Button>
           <ThemeToggle />
         </div>

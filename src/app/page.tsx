@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#201A51] py-20 md:py-32 overflow-hidden text-white">
+      <section className="relative bg-[#201A51] py-20 md:py-24 overflow-hidden text-white">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mx-auto max-w-4xl">
             <h1 className="font-headline mt-4 text-4xl font-bold tracking-tight md:text-5xl">
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="py-16 md:py-24 bg-[#201A51] -mt-12">
+      <section id="categories" className="py-16 md:py-20 bg-[#201A51] -mt-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {graphicCategories.map((category) => (
