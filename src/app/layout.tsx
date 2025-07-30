@@ -6,6 +6,8 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const fontBody = Hind_Siliguri({ 
   subsets: ['bengali'],
@@ -44,6 +46,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
+            <div className="bg-primary text-primary-foreground text-center p-2 text-sm">
+                <Link href="/courses">
+                    <Image src="https://placehold.co/1200x80.png" alt="special offer" width={1200} height={80} className="w-full h-auto" data-ai-hint="advertisement banner" />
+                </Link>
+            </div>
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
